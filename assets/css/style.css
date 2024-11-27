@@ -1,0 +1,208 @@
+body {
+    background-color: #f9f9f9;
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="20" height="20" fill="white"/><path d="M20 0L0 0L0 20" fill="none" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/><path d="M0 20L20 20L20 0" fill="none" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/></svg>');
+    background-size: 20px 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-title {
+    font-family: "am-lombardia", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    font-style: normal;
+    text-align: center;
+    color: #333;
+}
+
+.main-header {
+    margin-top: 3vh;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.main-text {
+    font-family: "bufalino", sans-serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-align: center;
+    color: #555;
+}
+
+.sidebar {
+    width: 9vw;
+    height: 70vh;
+    background-color: rgba(244, 244, 244, 0.7);
+    position: fixed;
+    padding: 1vh;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1vw;
+    border-radius: 1.5vw;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.sidebar ul {
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 2vh;
+
+}
+
+.sidebar ul li a:hover {
+    font-weight: 700;
+    color: #555;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.logo img {
+    left: 3.1vw;
+    top: 2vh;
+    position: fixed;
+    width: 6vw;
+    max-width: 100px;
+    height: auto;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.loginbox {
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    background-color: rgba(244, 244, 244, 0.7);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 1vh;
+    text-align: center;
+    justify-content: center;
+    width: 25vw;
+    margin-top: 3vh;
+}
+
+.loginbox h3{
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 35px;
+}
+
+.form-box{
+    margin: 15px;
+}
+
+.form-box label{
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1vh;
+}
+
+.form-box input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-box input:focus{
+    border: 1px solid #555;
+    outline: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 50%;
+    color: #fff;
+    background-color: #5a9 ;
+    margin: 20px;
+}
+
+.btn:hover{
+    background-color: #2a9;
+}
+
+.loginbox p {
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.loginbox p a{
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.loginbox p a:hover{
+    text-decoration: underline;
+    color: #333;
+}
+
+.registerbox{
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    background-color: rgba(244, 244, 244, 0.7);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 1vh;
+    text-align: center;
+    justify-content: center;
+    width: 25vw;
+    margin-top: 3vh;
+}
+
+.registerbox h3{
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 35px;
+}
+
+.name-box{
+    display: flex;
+}
+
+.registerbox p {
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.registerbox p a{
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.registerbox p a:hover{
+    text-decoration: underline;
+    color: #333;
+}

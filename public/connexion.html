@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.typekit.net/aga5ynr.css">
+    <title>To Do It - Connexion</title>
+</head>
+
+<header>
+    <div class="main-header">
+        <div class="main-title">
+            <h1>To Do It</h1>
+        </div>
+        <p class="main-text"> Organisez vos journées et accomplissez vos tâches facilement .</p>
+    </div>
+</header>
+
+<body>
+    <div class="logo">
+        <a href="index.html"><img src="../assets/images/logo_todoit.png" alt="To Do It logo"></a>
+    </div>
+    <nav class="sidebar">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#">Se connecter</a></li>
+            <li><a href="inscription.html">S'inscrire</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="loginbox">
+         <h3>Connexion </h3>
+         <div id="error-message" class="error-message" style="display: none;"></div>
+         <form action="connexion.php" method="POST">
+            <div class="form-box">
+                <label for="email">Adresse email</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+        </div>
+        <div class="form-box">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+        </div>
+        <button class="btn" type="submit">Se connecter</button>
+         </form>
+         <p>Pas encore inscrit ?<a href="inscription.html">Créer un compte</a></p>
+        </div>
