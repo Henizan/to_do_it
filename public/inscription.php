@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE email = ?");
         $stmt->execute([$email]);
         if ($stmt->rowCount() > 0) {
-            header('Location: inscription.html?error=Cet email est déjà utilisé.');
+            header("Location: inscription.html?error=Cet email est déjà utilisé.");
             exit;
         }
 
@@ -22,10 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$name, $surname, $email, $password]);
 
        
-        header('Location: connexion.html');
+        header("Location: connexion.html");
         exit;
     } catch (PDOException $e) {
-        header('Location: inscription.html?error=Erreur SQL : ' . urlencode($e->getMessage()));
+        header("Location: inscription.html?error=Erreur SQL : " . urlencode($e->getMessage()));
         exit;
     }
 }
