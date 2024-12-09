@@ -64,12 +64,12 @@ body {
 
 .sidebar ul li a:hover {
     font-weight: 700;
-    color: #555;
+    color: #333;
 }
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #333;
+    color: #555;
 }
 
 .logo img {
@@ -269,4 +269,67 @@ body {
     margin-left: 14vw;
     margin-top: 2vh;
     height: 75vh;
+}
+
+
+.settingbox{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2vw;
+    font-family: "montserrat", sans-serif;
+    color: #333;
+    background-color: rgba(244, 244, 244, 0.7);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 2vh;
+    width: 60vw;
+    margin: 5vh auto;
+}
+
+.infobox, .modifbox {
+    text-align: center;
+    border-radius: 10px;
+    padding: 2vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.modifbox h3{
+    padding-bottom: 0.7vh;
+}
+
+.modifbox button{
+    
+}
+
+.infobox h3{
+    padding-bottom: 0.7vh;
+}
+
+.deletebox {
+    grid-column: 1 / span 2; /* Étend la boîte sur trois colonnes */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 1.5vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+
+}
+
+.deletebox button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+}
+
+.deletebox button:hover {
+    background-color: #b52d2d;
 }

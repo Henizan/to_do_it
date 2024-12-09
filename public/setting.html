@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    
+
     <header>
         <div class="main-header">
             <div class="main-title">
@@ -29,9 +29,46 @@
         <ul>
             <li><a href="tab_bord.html">Tableau de bord</a></li>
             <li><a href="calendrier.html">Calendrier</a></li>
-            <li><a href="setting.html">Paramètre</a></li>
+            <li ><a href="setting.html" style="color: #333; font-size: larger;">Paramètres</a></li>
             <li><a href="index.html">Se déconnecter</a></li>
         </ul>
     </nav>
+
+    <div class="settingbox">
+        <div class="infobox">
+            <h3>Mes informations</h3>
+            <p>Email : <span><?php echo htmlspecialchars($user_email); ?></span></p>
+            <p>Nom : <span><?php echo htmlspecialchars($user_name); ?></span></p>
+            <p>Prénom : <span><?php echo htmlspecialchars($user_surname); ?></span></p>
+            Mon prénom :
+        </div>
+        <div class="modifbox">
+            <h3>Modifier mes informations</h3>
+            <div class="form-box">
+            <label for="email">Changer d'email</label>
+            <input type="email" id="email" name="email" placeholder="Entrez un nouvel email">
+        </div>
+        <div class="form-box">
+            <label for="name">Changer de nom</label>
+            <input type="text" id="name" name="name" placeholder="Entrez un nouveau nom">
+        </div>
+        <div class="form-box">
+            <label for="surname">Changer de prénom</label>
+            <input type="text" id="surname" name="surname" placeholder="Entrez un nouveau prénom">
+        </div>
+        <div class="form-box">
+            <label for="password">Changer de mot de passe</label>
+            <input type="password" id="password" name="password" placeholder="Entrez un nouveau mot de passe">
+        </div>
+        </div>
+        <div class="deletebox">
+            <h3>Supprimer mon compte</h3>
+            <form action="delete_user.php" method="post"></form>
+            <button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irresversible.')">
+                Supprimer mon compte
+            </button>
+        </div>
+    </div>
+
 
 </body>
