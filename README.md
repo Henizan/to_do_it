@@ -1,51 +1,66 @@
 # To Do It
 
-To Do It est une application web conçue pour aider les utilisateurs à organiser leurs journées et accomplir leurs tâches facilement. Elle permet de gérer une liste de tâches, de suivre ses activités dans un calendrier et d'accéder à un tableau de bord.
+**To Do It** est une application web innovante et visuelle conçue pour vous aider à organiser vos journées et accomplir vos tâches avec style. Adieu les listes ennuyeuses, dites bonjour à un véritable mur de **Post-its colorés** !
 
-## Technologies
-- **Frontend** : HTML5, CSS3, JavaScript (Vanilla)
-- **Backend** : PHP
-- **Base de données** : PostgreSQL (via Docker)
+## Captures d'écran du Projet
+
+*(Pour que ces images s'affichent sur GitHub, placez vos captures d'écran réelles dans le dossier `assets/images/` en respectant les noms ci-dessous, ou mettez à jour les liens)*
+
+### Page d'Accueil (Landing Page)
+![Accueil - Vitrine du projet](assets/images/capture_accueil.png)
+*La vitrine de présentation du projet.*
+
+### Tableau de Bord "Post-its"
+![Tableau de bord interactif](assets/images/capture_dashboard.png)
+*Gérez vos tâches comme de vrais Post-its : déplacez-les librement (Drag & Drop) et personnalisez leurs couleurs.*
+
+### Calendrier Interactif
+![Calendrier des tâches](assets/images/capture_calendrier.png)
+*Une vue globale sur votre mois. Cliquez sur une tâche pour l'éditer via une modale ou déplacez-la.*
+
+---
+
+## Fonctionnalités Principales
+- **Tableau de bord "Post-it"** : Un espace de travail interactif avec sauvegarde en temps réel de la position (X/Y) et de la couleur des notes via AJAX.
+- **Calendrier unifié** : Édition complète des tâches grâce à une fenêtre modale et modification des dates par glisser-déposer (FullCalendar).
+- **Paramètres utilisateur** : Interface de gestion de profil (Nom, Prénom, Email, Mot de passe).
+- **Authentification robuste** : Sessions sécurisées et mots de passe hachés.
+- **Sécurité** : Identifiants de base de données protégés via des variables d'environnement (`.env`).
+
+## Technologies Utilisées
+- **Frontend** : HTML5, CSS3, JavaScript Vanilla
+- **Backend** : PHP 8+ (Architecture Orientée API)
+- **Base de données** : PostgreSQL
 - **Infrastructure** : Docker & Docker Compose
 
-## Fonctionnalités principales
-- Gestion des tâches quotidiennes (To Do List)
-- Suivi des tâches via un calendrier unifié
-- Tableau de bord utilisateur récapitulant les activités
-- Réglage des paramètres utilisateur
-- Authentification sécurisée (Inscription, Connexion)
+## Installation (via Docker)
 
-## Structure
-- `public/index.html` : Page d'accueil et présentation
-- `public/tab_bord.html` : Tableau de bord de l'utilisateur
-- `public/calendrier.html` : Interface calendrier des tâches
-- `public/setting.html` : Page des paramètres
-- `public/connexion.html` / `public/inscription.html` : Pages de connexion et de création de compte
-- `public/connexion.php` / `public/inscription.php` : Scripts backend de gestion de l'authentification
-- `includes/` : Fichiers de configuration (ex: connexion à la base de données)
-- `assets/` : Ressources graphiques (`images/`), feuilles de style (`css/`) et scripts (`js/`)
-- `Dockerfile` / `docker-compose.yml` : Configuration de l'environnement conteneurisé
-- `init.sql` : Script de création de la structure de la base de données PostgreSQL
+Le projet est entièrement dockérisé pour simplifier son lancement.
 
-## Lancer le projet (local via Docker)
+### 1. Prérequis
+- [Docker](https://www.docker.com/) installé et lancé (ex: Docker Desktop).
 
-L'application est entièrement dockérisée pour simplifier son lancement sur n'importe quel système d'exploitation.
+### 2. Configuration Initiale
+Clonez le projet, puis créez votre fichier de configuration d'environnement :
+```bash
+# Copiez l'exemple pour initialiser votre configuration locale
+cp .env.example .env
+```
+*(Si vous êtes sous Windows et n'avez pas bash, copiez/collez manuellement le fichier `.env.example` et renommez-le en `.env`)*
 
-### Prérequis
-- [Docker](https://www.docker.com/) installé et en cours d'exécution sur votre machine (ex: Docker Desktop).
+### 3. Lancer l'environnement
+Dans le dossier du projet, exécutez :
+```bash
+docker-compose up -d --build
+```
 
-### Lancement
-1. Ouvrez un terminal dans le dossier racine du projet (`To_Do_It`).
-2. Exécutez la commande suivante pour construire et démarrer les conteneurs (PHP/Apache et PostgreSQL) en arrière-plan :
-   ```bash
-   docker-compose up -d --build
-   ```
-3. Ouvrez votre navigateur web et accédez à l'application via : `http://localhost:8080/public/`
+### 4. Accès
+- **Application Web** : Ouvrez [http://localhost:8081/public/](http://localhost:8081/public/)
+- **pgAdmin (Gestion de la DB)** : Ouvrez [http://localhost:5050/](http://localhost:5050/)
 
-*(La base de données PostgreSQL est automatiquement initialisée avec les tables nécessaires au premier lancement grâce au fichier `init.sql`).*
+*(La base de données et les tables PostgreSQL se construisent automatiquement au premier démarrage grâce au script `init.sql`)*
 
-### Arrêter le projet
-Pour stopper les conteneurs, exécutez dans le même dossier :
+## Fermer l'environnement
 ```bash
 docker-compose down
 ```
