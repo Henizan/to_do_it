@@ -1,11 +1,14 @@
 <?php
-$host = 'localhost';
-$dbname = 'to_do_it'; // Remplacez par le nom de votre base
-$username = 'root';
-$password = ''; // Remplacez par votre mot de passe MySQL
+// Configuration pour PostgreSQL via Docker
+// On utilise getenv pour récupérer les variables d'environnement (définies dans docker-compose.yml / .env)
+$host = getenv('DB_HOST') ?: 'db';
+$dbname = getenv('DB_NAME') ?: 'to_do_it';
+$username = getenv('DB_USER') ?: 'todo_user';
+$password = getenv('DB_PASSWORD') ?: 'todo_password';
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    // Utilisation du pilote pgsql au lieu de mysql
+    $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch (PDOException $e) {

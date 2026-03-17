@@ -1,0 +1,39 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8081:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=${DB_HOST:-db}
+      - DB_NAME=${DB_NAME:-to_do_it}
+      - DB_USER=${DB_USER:-todo_user}
+      - DB_PASSWORD=${DB_PASSWORD:-todo_password}
+
+  db:
+    image: postgres:15-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=${DB_USER:-todo_user}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-todo_password}
+      - POSTGRES_DB=${DB_NAME:-to_do_it}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_EMAIL:-admin@admin.com}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASSWORD:-admin}
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

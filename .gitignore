@@ -1,0 +1,17 @@
+# Fichiers d'environnement
+.env
+
+# Dossiers systèmes Windows/macOS
+Thumbs.db
+.DS_Store
+
+# Dépendances (le cas échéant)
+vendor/
+node_modules/
+
+# IDE et Configurations locales
+.idea/
+.vscode/
+
+# Données de la base de données locale (si montées en local)
+postgres_data/
