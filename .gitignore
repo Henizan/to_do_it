@@ -15,3 +15,9 @@ node_modules/
 
 # Données de la base de données locale (si montées en local)
 postgres_data/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
